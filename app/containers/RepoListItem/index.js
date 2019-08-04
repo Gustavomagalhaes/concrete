@@ -12,10 +12,12 @@ import { FormattedNumber } from 'react-intl';
 
 import { makeSelectCurrentUser } from 'containers/App/selectors';
 import ListItem from 'components/ListItem';
-import IssueIcon from './IssueIcon';
-import IssueLink from './IssueLink';
+import Description from 'components/Description';
+import StarNumber from 'components/StarNumber';
 import RepoLink from './RepoLink';
 import Wrapper from './Wrapper';
+import StarWrapper from './StarWrapper';
+import starIcon from 'images/star-icon.svg';
 
 export function RepoListItem(props) {
   const { item } = props;
@@ -31,12 +33,17 @@ export function RepoListItem(props) {
   const content = (
     <Wrapper>
       <RepoLink href={item.html_url} target="_blank">
-        {nameprefix + item.name}
+        {item.name}
       </RepoLink>
-      <IssueLink href={`${item.html_url}/issues`} target="_blank">
-        <IssueIcon />
-        <FormattedNumber value={item.open_issues_count} />
-      </IssueLink>
+      <Description>
+        {item.description}
+      </Description>
+      <StarWrapper>
+        <img src={starIcon} width='25px'/>
+        <StarNumber>
+          <FormattedNumber value={item.stargazers_count} />
+        </StarNumber>
+      </StarWrapper>
     </Wrapper>
   );
 

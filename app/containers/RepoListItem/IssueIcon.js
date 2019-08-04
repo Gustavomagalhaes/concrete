@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-import NormalIssueIcon from 'components/IssueIcon';
+import NormalStarIcon from 'components/StarIcon';
 
-const IssueIcon = styled(NormalIssueIcon)`
+const StarIcon = styled(NormalIssueIcon)`
   fill: #ccc;
   margin-right: 0.25em;
 `;
 
-export default IssueIcon;
+export default StarIcon;

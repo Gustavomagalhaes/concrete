@@ -15,7 +15,7 @@ const enTranslationMessages = require('./translations/en.json');
 const deTranslationMessages = require('./translations/de.json');
 
 addLocaleData(enLocaleData);
-addLocaleData(deLocaleData);
+// addLocaleData(deLocaleData);
 
 const DEFAULT_LOCALE = 'en';
 

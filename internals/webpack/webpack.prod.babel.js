@@ -119,7 +119,7 @@ module.exports = require('./webpack.base.babel')({
       name: 'React Boilerplate',
       short_name: 'React BP',
       description: 'My React Boilerplate-based project!',
-      background_color: '#fafafa',
+      background_color: '#ffffff',
       theme_color: '#b1624d',
       inject: true,
       ios: true,

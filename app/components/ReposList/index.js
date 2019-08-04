@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import List from 'components/List';
-import ListItem from 'components/ListItem';
-import LoadingIndicator from 'components/LoadingIndicator';
 import RepoListItem from 'containers/RepoListItem';
+import Wrapper from './Wrapper';
+import List from 'components/List';
+import UserNotFound from 'components/UserNotFound';
+import LoadingIndicator from 'components/LoadingIndicator';
 
 function ReposList({ loading, error, repos }) {
   if (loading) {
@@ -12,10 +13,11 @@ function ReposList({ loading, error, repos }) {
   }
 
   if (error !== false) {
-    const ErrorComponent = () => (
-      <ListItem item="Something went wrong, please try again!" />
+    return ( 
+      <Wrapper>
+        <UserNotFound>{`User not found :(`}</UserNotFound>
+      </Wrapper>
     );
-    return <List component={ErrorComponent} />;
   }
 
   if (repos !== false) {

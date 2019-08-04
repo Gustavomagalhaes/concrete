@@ -15,7 +15,7 @@
  *    }
  */
 
-import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from './constants';
+import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR, LOAD_USER, LOAD_USER_SUCCESS, LOAD_USER_ERROR } from './constants';
 
 /**
  * Load the repositories, this action starts the request saga
@@ -54,6 +54,47 @@ export function reposLoaded(repos, username) {
 export function repoLoadingError(error) {
   return {
     type: LOAD_REPOS_ERROR,
+    error,
+  };
+}
+
+/**
+ * Load the user, this action starts the request saga
+ *
+ * @return {object} An action object with a type of LOAD_USER
+ */
+export function loadUser() {
+  return {
+    type: LOAD_USER,
+  };
+}
+
+/**
+ * Dispatched when the user is loaded by the request saga
+ *
+ * @param  {array} user The user data
+ * @param  {string} username The current username
+ *
+ * @return {object}      An action object with a type of LOAD_USER_SUCCESS passing the repos
+ */
+export function userLoaded(user, username) {
+  return {
+    type: LOAD_USER_SUCCESS,
+    user,
+    username,
+  };
+}
+
+/**
+ * Dispatched when loading the user fails
+ *
+ * @param  {object} error The error
+ *
+ * @return {object}       An action object with a type of LOAD_USER_ERROR passing the error
+ */
+export function userLoadingError(error) {
+  return {
+    type: LOAD_USER_ERROR,
     error,
   };
 }
