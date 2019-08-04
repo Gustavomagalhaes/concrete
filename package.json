@@ -90,7 +90,12 @@
     "redux-saga": "1.0.2",
     "reselect": "4.0.0",
     "sanitize.css": "8.0.0",
-    "styled-components": "4.2.0"
+    "styled-components": "4.2.0",
+    "webpack": "4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-middleware": "3.6.2",
+    "webpack-hot-middleware": "2.24.3",
+    "webpack-pwa-manifest": "4.0.0",
   },
   "devDependencies": {
     "@babel/cli": "7.4.3",
